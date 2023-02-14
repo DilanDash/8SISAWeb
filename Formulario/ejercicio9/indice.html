@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>Pago a un trabajador por horas normales y extras</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <script>
+ 
+function algoritmo()
+{
+    let cantidad_de_dinero, horas_de_trabajo, pago_por_hora;
+    horas_de_trabajo = parseFloat (document.formulario1.horas_de_trabajo.value);
+    pago_por_hora = parseFloat (document.formulario1.pago_por_hora.value);
+    cantidad_de_dinero=horas_de_trabajo*pago_por_hora;
+    if(horas_de_trabajo>40)
+        cantidad_de_dinero=cantidad_de_dinero+(horas_de_trabajo-40)*pago_por_hora;
+    if(horas_de_trabajo>48)
+        cantidad_de_dinero=cantidad_de_dinero+(horas_de_trabajo-48)*pago_por_hora;
+    document.formulario1.cantidad_de_dinero.value = cantidad_de_dinero;
+}
+ 
+        </script>
+    </head>
+    <body>
+        <form name="formulario1">
+            <table style="text-align: left; margin-left: auto; margin-right: auto;">
+                <tbody>
+                    <tr>
+                        <td>
+                            <label for="horas_de_trabajo">Ingresa el valor de horas de trabajo:</label>
+                        </td>
+                        <td>
+                            <input name="horas_de_trabajo" required="required" step="0.000001" type="number" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="pago_por_hora">Ingresa el valor de pago por hora:</label>
+                        </td>
+                        <td>
+                            <input name="pago_por_hora" required="required" step="0.000001" type="number" />
+                        </td>
+                    </tr>
+                    <tr align="center">
+                        <td colspan="2" rowspan="1">
+                            <input value="Procesar" type="button" onclick="algoritmo();" />
+                            <input type="reset" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="cantidad_de_dinero">Valor de cantidad de dinero:</label>
+                        </td>
+                        <td>
+                            <input name="cantidad_de_dinero" step="0.000001" type="number" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </body>
+</html>

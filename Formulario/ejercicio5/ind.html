@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Porcentaje de mujeres y hombres</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <script>
+ 
+function algoritmo()
+{
+    let estudiantes, genero, hombres, mujeres;
+    let porcentaje_hombres, porcentaje_mujeres;
+    genero = parseInt (document.formulario1.genero.value);
+    if(genero==1)
+        mujeres=mujeres+1;
+    else
+        hombres=hombres+1;
+}
+ 
+        </script>
+    </head>
+    <body>
+        <form name="formulario1">
+            <table style="text-align: left; margin-left: auto; margin-right: auto;">
+                <tbody>
+                    <tr>
+                        <td>
+                            <label for="genero">Selecciona el valor de genero:</label>
+                        </td>
+                        <td>
+                            <select name="genero" required="required">
+                                <option value="1">Mujer</option>
+                                <option value="2">Hombre</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr align="center">
+                        <td colspan="2" rowspan="1">
+                            <input value="Procesar" type="button" onclick="algoritmo();" />
+                            <input type="reset" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </body>
+</html>

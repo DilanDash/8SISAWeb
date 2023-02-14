@@ -1,0 +1,90 @@
+
+<html>
+    <head>
+        <title>Descuento del 15% en una tienda</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <script>
+ 
+function algoritmo()
+{
+    let costo_del_articulo_1, costo_del_articulo_2, costo_del_articulo_3, descuento, pago_final;
+    let total_de_la_compra;
+    costo_del_articulo_1 = parseFloat (document.formulario1.costo_del_articulo_1.value);
+    costo_del_articulo_2 = parseFloat (document.formulario1.costo_del_articulo_2.value);
+    costo_del_articulo_3 = parseFloat (document.formulario1.costo_del_articulo_3.value);
+    total_de_la_compra=costo_del_articulo_1+costo_del_articulo_2+costo_del_articulo_3;
+    if(total_de_la_compra>1000)
+        descuento=total_de_la_compra*0.15;
+    else
+        descuento=0;
+    pago_final=total_de_la_compra-descuento;
+    document.formulario1.descuento.value = descuento;
+    document.formulario1.pago_final.value = pago_final;
+    document.formulario1.total_de_la_compra.value = total_de_la_compra;
+}
+ 
+        </script>
+    </head>
+    <body>
+        <form name="formulario1">
+            <table style="text-align: left; margin-left: auto; margin-right: auto;">
+                <tbody>
+                    <tr>
+                        <td>
+                            <label for="costo_del_articulo_1">Ingresa el valor de costo del articulo 1:</label>
+                        </td>
+                        <td>
+                            <input name="costo_del_articulo_1" required="required" step="0.000001" type="number" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="costo_del_articulo_2">Ingresa el valor de costo del articulo 2:</label>
+                        </td>
+                        <td>
+                            <input name="costo_del_articulo_2" required="required" step="0.000001" type="number" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="costo_del_articulo_3">Ingresa el valor de costo del articulo 3:</label>
+                        </td>
+                        <td>
+                            <input name="costo_del_articulo_3" required="required" step="0.000001" type="number" />
+                        </td>
+                    </tr>
+                    <tr align="center">
+                        <td colspan="2" rowspan="1">
+                            <input value="Procesar" type="button" onclick="algoritmo();" />
+                            <input type="reset" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="descuento">Valor de descuento:</label>
+                        </td>
+                        <td>
+                            <input name="descuento" step="0.000001" type="number" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="pago_final">Valor de pago final:</label>
+                        </td>
+                        <td>
+                            <input name="pago_final" step="0.000001" type="number" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="total_de_la_compra">Valor de total de la compra:</label>
+                        </td>
+                        <td>
+                            <input name="total_de_la_compra" step="0.000001" type="number" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </body>
+</html>
